@@ -1,0 +1,16 @@
+version: '3.3'
+
+services:
+  database:
+    image: postgres:15
+    environment:
+      - POSTGRES_DB=hmsolutions_db
+      - POSTGRES_USER=rick
+      - POSTGRES_PASSWORD=rick_HUNTER1980
+    ports:
+      - '5432:5432'
+    volumes:
+      - /postgres_data:/var/lib/postgres/data
+volumes:
+  postgres_data:
+    external: true
