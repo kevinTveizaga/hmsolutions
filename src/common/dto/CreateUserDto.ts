@@ -1,5 +1,5 @@
 import { IsNotEmpty, Matches, Length, IsEmail } from 'class-validator';
-import { REGEX, MESSAGES } from '../utils/app.util';
+import { REGEX, MESSAGES } from '../../modules/utils/app.util';
 
 export class CreateUserDto {
   @IsNotEmpty({ message: 'El usuario deberia tener un correo' })
