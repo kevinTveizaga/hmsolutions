@@ -1,13 +1,22 @@
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
-//crear controladores y servicios para billing types
+import {
+  BaseEntity,
+  Column,
+  Entity,
+  OneToMany,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
+
 @Entity({ name: 'billingType' })
 export class BillingType extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ unique: true })
+  @Column()
   name: string;
 
   @Column()
   description: string;
+
+  @OneToMany(() => BillingType, (BillingType) => BillingType.id)
+  billingType: BillingType;
 }

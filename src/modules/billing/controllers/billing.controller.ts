@@ -10,7 +10,6 @@ import {
 } from '@nestjs/common';
 import { BillingService } from '../services/billing.service';
 import { CreateBillingDto } from '../../../common/dto/CreateBillingDto';
-import { CreateBillingTypeDto } from '../../../common/dto/CreateBillingTypeDto';
 import { Billing } from '../entities/billing.entity';
 @Controller('api/billing')
 export class BillingController {
@@ -32,11 +31,6 @@ export class BillingController {
     @Body() body: CreateBillingDto,
   ): Promise<Billing> {
     return await this.billingService.registerBilling(id, userId, body);
-  }
-
-  @Post()
-  async createBillingType(@Body() body: CreateBillingTypeDto) {
-    return await this.billingService.registerBillingType(body);
   }
 
   @Put(':id')
