@@ -16,6 +16,10 @@ export class UsersService {
     return this.usersRepo.findBy({ id: id });
   }
 
+  async findUserByEmail(email: string): Promise<User | undefined>{
+    return this.usersRepo.findOneBy({ email: email });
+  }
+
   async doUserRegistration(body: CreateUserDto): Promise<User> {
     const newUser = new User();
     newUser.email = body.email;

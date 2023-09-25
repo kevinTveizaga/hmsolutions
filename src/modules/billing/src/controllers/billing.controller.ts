@@ -9,7 +9,7 @@ import {
   Put,
 } from '@nestjs/common';
 import { BillingService } from '../services/billing.service';
-import { CreateBillingDto } from '../../../common/dto/CreateBillingDto';
+import { CreateBillingDto } from '../../../../common/dto/CreateBillingDto';
 import { Billing } from '../entities/billing.entity';
 @Controller('api/billing')
 export class BillingController {

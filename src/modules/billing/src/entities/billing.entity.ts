@@ -1,5 +1,5 @@
-import { User } from 'src/modules/users/entities/user.entity';
-import { BillingType } from 'src/modules/billing/entities/billingType.entity';
+import { User } from 'src/modules/users/src/entities/user.entity';
+import { BillingType } from 'src/modules/billing/src/entities/billingType.entity';
 import {
   BaseEntity,
   Column,

@@ -1,12 +1,12 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { UsersModule } from './modules/users/users.module';
-import { postgresDataSourceOptions } from '../database/data-source';
-import { RolesModule } from './modules/roles/roles.module';
-import { BillingModule } from './modules/billing/billing.module';
+import { UsersModule } from './modules/users/src/users.module';
+import { TypeOrmModuleConfig } from './config/data-source';
+import { RolesModule } from './modules/roles/src/roles.module';
+import { BillingModule } from './modules/billing/src/billing.module';
 @Module({
   imports: [
-    TypeOrmModule.forRoot(postgresDataSourceOptions),
+    TypeOrmModule.forRootAsync(TypeOrmModuleConfig),
     UsersModule,
     RolesModule,
     BillingModule,
