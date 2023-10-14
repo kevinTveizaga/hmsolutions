@@ -41,7 +41,7 @@ export class BillingService {
     const newBill = new Billing();
     if (user && billingService) {
       newBill.invoiceNumber = body.invoiceNumber;
-      newBill.bililngType = billingService.id;
+      newBill.billingType = billingService.id;
       newBill.customerId = user.id;
       newBill.amount = body.amount;
       newBill.coinType = body.coinType;

@@ -18,13 +18,11 @@ export class Billing extends BaseEntity {
   invoiceNumber: number;
 
   @Column()
-  bililngType: number;
-
-  @Column()
   customerId: number;
 
+  @Column()
   @ManyToOne(() => BillingType, (BillingType) => BillingType.id)
-  billingType: BillingType;
+  billingType: number;
 
   @ManyToOne(() => User, (User) => User.id)
   customer: User;

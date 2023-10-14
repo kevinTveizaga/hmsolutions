@@ -1,10 +1,4 @@
-import {
-  BaseEntity,
-  Column,
-  Entity,
-  OneToMany,
-  PrimaryGeneratedColumn,
-} from 'typeorm';
+import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity({ name: 'billingType' })
 export class BillingType extends BaseEntity {
@@ -16,7 +10,4 @@ export class BillingType extends BaseEntity {
 
   @Column()
   description: string;
-
-  @OneToMany(() => BillingType, (BillingType) => BillingType.id)
-  billingType: BillingType;
 }

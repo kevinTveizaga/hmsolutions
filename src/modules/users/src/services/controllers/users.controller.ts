@@ -6,16 +6,18 @@ import {
   Body,
   Put,
   Delete,
+  UseGuards,
 } from '@nestjs/common';
 import { UsersService } from '../users.service';
 import { CreateUserDto } from '../../../../../common/dto/CreateUserDto';
 import { SETTINGS } from 'src/modules/utils/app.util';
 import { User } from '../../entities/user.entity';
+import { JwtAuthGuard } from 'src/modules/auth/jwt-auth.guard';
 
 @Controller('api/users')
 export class UsersController {
   constructor(private usersService: UsersService) {}
-
+  @UseGuards(JwtAuthGuard)
   @Get()
   getAll() {
     return this.usersService.findAll();
