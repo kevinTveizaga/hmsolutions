@@ -7,6 +7,7 @@ import { RolesModule } from './modules/roles/src/roles.module';
 import { BillingModule } from './modules/billing/src/billing.module';
 import { AuthModule } from './modules/auth/auth.module';
 import databaseConfig from './config/database.config';
+import { BuildingsModule } from './modules/buildings/buildings.module';
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import databaseConfig from './config/database.config';
     RolesModule,
     BillingModule,
     AuthModule,
+    BuildingsModule,
   ],
   controllers: [],
   providers: [],
