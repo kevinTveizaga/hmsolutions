@@ -18,7 +18,11 @@ export class RolesService {
   create(body: any) {
     const newRol = new Rol();
     newRol.name = body.name;
-    newRol.description = body.description;
+    newRol.is_admin = body.is_admin || 0;
+    newRol.water_bill = body.water_bill || 0;
+    newRol.system_settings = body.system_settings || 0;
+    newRol.reports = body.reports || 0;
+    newRol.user_settings = body.user_settings || 0;
     return this.rolesRepo.save(newRol);
   }
 
